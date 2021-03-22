@@ -1,0 +1,23 @@
+.time-block {
+    position: relative;
+}
+
+.time-block + .time-block {
+    margin-top: 1.0rem;
+}
+
+.time-block label {
+    font-size: 1.4rem;
+}
+
+.time-block input {
+    width: 12rem;
+    height: 3rem;
+    margin-top: 0.3rem;
+    border-radius: 0.6rem;
+    background: var(--color-input-background);
+    border: 2px solid var(--color-line-in-gray);
+    outline: 0;
+    padding: 0 1.6rem;
+    font: 1.6rem Archivo;
+}

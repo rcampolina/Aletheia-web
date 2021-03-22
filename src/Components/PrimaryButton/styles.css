@@ -1,0 +1,18 @@
+.button-block {
+  margin-top: 2rem;
+}
+
+.button-block button {
+  width: 30vw;
+  height: 8vh;
+  border-radius: 0.8rem;
+  border: 1px solid var(--color-line-in-gray);
+  background-color: var(--color-primary);
+  color: var(--color-button-text);
+
+  transition: 0.2s;
+}
+
+.button-block button:hover {
+  background-color: var(--color-primary-dark);
+}

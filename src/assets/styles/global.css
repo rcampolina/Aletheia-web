@@ -1,0 +1,64 @@
+:root {
+    font-size: 80%;
+
+    --color-background: #FFFFFF;
+    --color-primary-lighter: #ec7095;
+    --color-primary-light: #e9678e;
+    --color-primary: #E74B7A;
+    --color-primary-dark: #b61f4d;
+    --color-primary-darker: #990b36;
+    --color-secondary-lighter: #c573eb;
+    --color-secondary-light: #af4fdb;
+    --color-secondary: #9332c0;
+    --color-secondary-dark: #680d92;
+    --color-secondary-darker: #4b056b;
+    --color-title-in-primary: #FFFFFF;
+    --color-text-in-primary: #D4C2FF;
+    --color-text-title: #32264D;
+    --color-text-complement: #9C98A6;
+    --color-text-base: #6A6180;
+    --color-line-in-white: #E6E6F0;
+    --color-line-in-gray: #D4C2FF;
+    --color-input-background: #F8F8FC;
+    --color-button-text: #FFFFFF;
+    --color-box-base: #FFFFFF;
+    --color-box-footer: #FAFAFC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* html, body, #root {
+    height: 100vh;
+} */
+
+body {
+    background: var(--color-background);
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body,
+input,
+button,
+textarea {
+    font: 500 1.6rem Poppins;
+}
+
+.container {
+    width: 90vw;
+    max-width: 1100px;
+}
+
+@media (min-width: 700px) {
+    :root {
+        font-size: 100%;
+    }
+}

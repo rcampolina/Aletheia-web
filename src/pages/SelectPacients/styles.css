@@ -1,0 +1,15 @@
+.container {
+  width: 100%;
+}
+
+.main-container {
+  width: 100%;
+}
+
+.react-calendar {  
+  width: 600px !important;
+}
+
+.main-container {
+  padding-bottom: 2rem;
+}

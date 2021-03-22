@@ -1,0 +1,17 @@
+.container{
+  width: 100%;
+}
+
+.react-calendar {  
+  width: 600px !important;
+}
+
+.main-container {
+  padding-bottom: 2rem;
+}
+
+.buttons {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}

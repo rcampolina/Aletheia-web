@@ -1,0 +1,47 @@
+.page-container {
+  padding: 4rem;
+
+  width: 100vw;
+  height: 100vh;
+
+  color: var(--color-text-title);
+  background: var(--color-box-base);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-container {  
+  color: var(--color-box-base);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.options-container {
+  margin: 2rem;
+  width: 20rem;
+  height: 10rem;
+  border: 0;
+  border-radius: 0.2rem;
+  color: var(--color-button-text);
+  background-color: var(--color-primary);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font: 700 1.6rem Archivo;
+  text-decoration: none;
+  word-wrap: normal;
+  cursor: pointer;
+
+  transition: background-color 0.2s;
+}
+
+.options-container:hover {
+  background-color: var(--color-primary-dark);
+}

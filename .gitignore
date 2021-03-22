@@ -1,15 +1,39 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Arquivos
+Arquivos
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# server
+.vscode
+node_modules
+package-lock.json
+uploads/*
+!uploads/.gitkeep
+*.sqlite
+# macOS
+.DS_Store
+
+# mobile
+.expo
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+web-report/
+# macOS
+.DS_Store
+
+# web
+.pnp
+web.pnp.js
 
 # testing
-/coverage
+coverage
 
 # production
-/build
+build
 
 # misc
 .DS_Store
@@ -19,5 +43,7 @@
 .env.production.local
 
 npm-debug.log*
+yarn-lock
 yarn-debug.log*
+yarn.lock
 yarn-error.log*

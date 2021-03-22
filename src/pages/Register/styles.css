@@ -1,0 +1,19 @@
+.form-register {
+  padding-bottom: 2rem;
+}
+.checkbox {
+  height: 25px;
+  width: 25px;
+  margin-right: 0.5rem;
+}
+
+.container-select {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.save {
+  display: flex;
+  justify-content: center;
+}

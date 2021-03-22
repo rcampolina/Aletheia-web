@@ -1,0 +1,48 @@
+.container-table {
+  width: 100vw;
+  height: 100vh;
+}
+
+table {
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  border-spacing: 2px;
+  border-color: grey;
+  text-indent: initial;
+}
+
+table, th, td {
+  border: none;
+  padding: 15px 5px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+thead > tr {
+  font: 300 1rem Poppins !important;
+}
+
+tbody > tr {
+  border-collapse: collapse;
+  box-sizing: border-box;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  text-indent: initial;
+}
+
+tr:hover {
+  background-color: rgb(243, 243, 243);
+}
+
+.main-container {
+  font: 300 1rem Poppins !important;
+}
+
+.button-container {
+  font: 300 1rem Poppins !important;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: .5rem;
+}

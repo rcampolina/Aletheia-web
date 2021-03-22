@@ -1,0 +1,27 @@
+.page-login{
+  text-align: center;
+  margin-bottom: 4.2rem;
+  max-width: 700px;
+  display: flex;
+}
+
+.logo-container {
+  margin-bottom: 4.2rem;
+}
+
+.input-block input{
+  height: 3.5rem;
+  margin-top: 1.2rem;
+  border-radius: 0.8rem;
+  background-color: var(--color-input-background);
+  border: 1px solid var(--color-line-in-gray);
+  outline: 0;
+  padding: 0 1.6rem;
+  font: Archivo;
+
+  transition: 0.1s;
+}
+
+.input-block input:hover {
+  border: 2px solid var(--color-line-in-gray);
+}
