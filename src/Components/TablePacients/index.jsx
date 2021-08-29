@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import api from '../../services/api';
 
 import "./styles.css";
@@ -42,13 +43,15 @@ const BodyData = ({ data }) => {
 
 const TablePacients = () => {
   const [data, setData] = useState([{}]);
-  async function returnData() {
-    if (data.length === 1) {
+  
+  useEffect(() => {
+    (async () => {
       const res = await api.get('users');
       setData(res.data);
-    }
-  }
-  returnData();
+      console.log(data);
+    })()
+  }, [])
+
   return (
     <table className="container-table bordered highlight responsive-table">
       <HeaderData data={data} />

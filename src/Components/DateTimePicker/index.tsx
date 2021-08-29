@@ -1,35 +1,37 @@
-import React, { ChangeEventHandler, EventHandler, FormEventHandler, useState } from 'react';
+import React, {  useState } from 'react';
 import Calendar from 'react-calendar';
 import TimePicker from '../../Components/TimePicker';
 
 import './styles.css';
 import 'react-calendar/dist/Calendar.css';
 
+interface DatasInterface {
+  id?: number,
+  data?: Date,
+  hora?: string,
+}
+
 function DateTimePicker(dateHour: any) {
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [selectedTimes, setSelectedTimes] = useState([{ hour: '' }]);
-
+  const [selectedTimes, setSelectedTimes] = useState<DatasInterface[]>([{id: 0, data: selectedDate, hora: ''}]);
+  const [disableButton, setDisableButton] = useState(true)
+ 
   function addNewHour() {
-    setSelectedTimes([...selectedTimes, { hour: '' }]);
+    setSelectedTimes([...selectedTimes, { }]);
+    setDisableButton(true)
   }
 
-  function generateDateTime() {
-    console.log('generate');
-
-    selectedDate.setMilliseconds(0)
-    selectedDate.setSeconds(0)
-    selectedDate.setMinutes(0)
-    selectedDate.setHours(18)
-    
-    dateHour = String(selectedDate);
-    console.log(dateHour)
+  function onChangeHour(hora: string) {
+    setSelectedTimes([{id: selectedTimes.length + 1, data: selectedDate, hora: hora}]);
+    // setDisableButton(false)
+    console.log(selectedTimes)
   }
 
   return (
-    <div className="calendar-container" onClick={generateDateTime}>
+    <div className="calendar-container" >
       <Calendar value={selectedDate} onClickDay={setSelectedDate} locale="pt-BR" />
       <div className="timepicker">
-        <button type="button" className="addHour" onClick={addNewHour}>
+        <button type="button" className="addHour" onClick={addNewHour} disabled={disableButton}>
           + Novo Horário
         </button>
         {selectedTimes.map((selectedtime, index) => {
@@ -38,7 +40,8 @@ function DateTimePicker(dateHour: any) {
               <TimePicker
                 id="hour"
                 name="hour"
-                value={selectedtime.hour}
+                value={selectedtime.hora}
+                onChange={e => onChangeHour(e.target.value)}
               />
             </div>
           );

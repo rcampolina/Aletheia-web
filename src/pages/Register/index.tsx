@@ -19,6 +19,7 @@ function Register() {
   const [adress, setaAdress] = useState('');
   const [condition, setCondition] = useState('Normal');
   const [observations, setObservations] = useState('');
+  const [attendance, setAttendance] = useState('');
 
   // async function getConditions(){
     
@@ -32,6 +33,18 @@ function Register() {
   function handleSubmit(e: FormEvent){
     e.preventDefault();
 
+    if ( 
+      name === undefined || name === '' ||
+      email === undefined || email === '' ||
+      phone === undefined || phone === '' ||
+      whatsapp === undefined || whatsapp === '' ||
+      cpf === undefined || cpf === '' ||
+      birth === undefined || birth === ''
+    ) {
+      alert('Campos obrigatórios devem ser preenchidos')
+      return
+    }
+
     api.post('users', {
       name,
       email,
@@ -41,7 +54,8 @@ function Register() {
       birthDate: birth,
       adress,
       condition,
-      observations
+      observations,
+      attendance
     }).then(()=> {
       alert('Cadastro realizado com sucesso!')
     }).catch((err)=> {
@@ -75,7 +89,7 @@ function Register() {
             <SelectRegister options={[]} value={condition} onChange={e => setCondition(e.target.value)}/>
           </div>
           <TextArea className="observations" name="observations" placeholder="Observações" value={observations} onChange={e => setObservations(e.target.value)} />
-          <DateTimePicker />
+          <DateTimePicker name="attendance" value={attendance} onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setAttendance(e.target.value)}/>
           <div className="save">
             <PrimaryButton title="Salvar" type="submit"/>
           </div>
