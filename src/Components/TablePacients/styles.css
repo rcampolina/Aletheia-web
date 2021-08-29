@@ -1,6 +1,6 @@
-.container-table {
+.container {
   width: 100vw;
-  height: 100vh;
+  max-width: 1300px;
 }
 
 table {
@@ -30,6 +30,10 @@ tbody > tr {
   border-top: 2px solid grey;
   border-bottom: 2px solid grey;
   text-indent: initial;
+}
+
+.pagination {
+  padding: 0.5rem;
 }
 
 tr:hover {
