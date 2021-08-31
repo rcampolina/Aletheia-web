@@ -47,3 +47,5 @@ yarn-lock
 yarn-debug.log*
 yarn.lock
 yarn-error.log*
+
+.env
