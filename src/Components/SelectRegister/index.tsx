@@ -11,9 +11,6 @@ interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   }[]>;
 }
 
-
-
-
 const SelectRegister: React.FC<SelectProps> = ({ options, ...rest }) => {
   const [condition, setCondition] = useState('Normal');
   return (
