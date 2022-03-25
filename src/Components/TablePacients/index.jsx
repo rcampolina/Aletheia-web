@@ -192,7 +192,7 @@ const TablePacients = () => {
   
   useEffect(() => {
     (async () => {
-      const res = await api.get('users');
+      const res = await api.get('attendanceUsers/table');
       setData(res.data);
       console.log(res.data);
     })()
@@ -212,24 +212,20 @@ const TablePacients = () => {
             accessor: 'email',
           },
           {
-            Header: 'phone',
-            accessor: 'phone',
+            Header: 'Whatsapp',
+            accessor: 'whatsapp',
           },
           {
-            Header: 'whatsapp',
-            accessor: 'whatsapp',
+            Header: 'Status',
+            accessor: 'status[0].label',
           },
           {
             Header: 'CPF',
             accessor: 'cpf',
           },
           {
-            Header: 'Aniversário',
-            accessor: 'birthDate',
-          },
-          {
-            Header: 'Endereço',
-            accessor: 'adress',
+            Header: 'Idade',
+            accessor: 'age',
           },
           {
             Header: 'Condição',

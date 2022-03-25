@@ -20,6 +20,14 @@ function Register() {
   const [condition, setCondition] = useState('Normal');
   const [observations, setObservations] = useState('');
   const [attendance, setAttendance] = useState('');
+    const [street, setStreet] = useState('');
+		const [number, setNumber] = useState('');
+		const [district, setDistrict] = useState('');
+    const [complement, setComplement] = useState('');
+		const [city, setCity] = useState('');
+		const [state, setState] = useState('');
+		const [country, setCountry] = useState('');
+		const [code, setCode] = useState('');
 
   // async function getConditions(){
     
@@ -52,25 +60,42 @@ function Register() {
       whatsapp,
       cpf,
       birthDate: birth,
-      adress,
       condition,
       observations,
-      attendance
-    }).then(()=> {
+      adress: {
+        street,
+        number,
+        district,
+        complement,
+        city,
+        state,
+        country,
+        code
+      }
+
+    }).then(()=> {      
+      setName('');
+      setEmail('');
+      setPhone('');
+      setWhatsapp('');
+      setBirth('');
+      setCpf('');
+      setaAdress('');
+      setCondition('Normal');
+      setObservations('');
+      setStreet('');
+      setNumber('');
+      setDistrict('');
+      setComplement('');
+      setCity('');
+      setState('');
+      setCountry('');
+      setCode('');
       alert('Cadastro realizado com sucesso!')
     }).catch((err)=> {
       alert('Erro no cadastro!')
       console.log(err);
     });
-    setName('');
-    setEmail('');
-    setPhone('');
-    setWhatsapp('');
-    setBirth('');
-    setCpf('');
-    setaAdress('');
-    setCondition('Normal');
-    setObservations('');
   }
 
   return (
@@ -84,7 +109,14 @@ function Register() {
           <Input name="whatsapp" placeholder="Celular" value={whatsapp} onChange={e => setWhatsapp(e.target.value)} />
           <Input name="birth" placeholder="Nascimento" type="date" value={birth} onChange={e => setBirth(e.target.value)} />
           <Input name="cpf" placeholder="CPF" value={cpf} onChange={e => setCpf(e.target.value)} />
-          <Input name="adress" placeholder="Endereço" value={adress} onChange={e => setaAdress(e.target.value)} />
+          <Input name="street" placeholder="Rua" value={street} onChange={e => setStreet(e.target.value)} />
+          <Input name="number" placeholder="Número" value={number} onChange={e => setNumber(e.target.value)} />
+          <Input name="complement" placeholder="Complemento" value={complement} onChange={e => setComplement(e.target.value)} />
+          <Input name="district" placeholder="Bairro" value={district} onChange={e => setDistrict(e.target.value)} />
+          <Input name="city" placeholder="Cidade" value={city} onChange={e => setCity(e.target.value)} />
+          <Input name="state" placeholder="Estado" value={state} onChange={e => setState(e.target.value)} />
+          <Input name="country" placeholder="País" value={country} onChange={e => setCountry(e.target.value)} />
+          <Input name="code" placeholder="CEP" value={code} onChange={e => setCode(e.target.value)} />
           <div className="container-select">
             <SelectRegister options={[]} value={condition} onChange={e => setCondition(e.target.value)}/>
           </div>

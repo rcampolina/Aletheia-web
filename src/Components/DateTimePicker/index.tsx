@@ -24,12 +24,11 @@ function DateTimePicker(dateHour: any) {
   function onChangeHour(hora: string) {
     setSelectedTimes([{id: selectedTimes.length + 1, data: selectedDate, hora: hora}]);
     // setDisableButton(false)
-    console.log(selectedTimes)
   }
 
   return (
     <div className="calendar-container" >
-      <Calendar value={selectedDate} onClickDay={setSelectedDate} locale="pt-BR" />
+      <Calendar value={selectedDate} onClickDay={setSelectedDate} locale="pt-BR" onChange={() => console.log()} />
       <div className="timepicker">
         <button type="button" className="addHour" onClick={addNewHour} disabled={disableButton}>
           + Novo Horário
