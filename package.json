@@ -23,7 +23,7 @@
     "chance": "^1.1.7",
     "jest": "24.9.0",
     "namor": "^2.0.2",
-    "react": "^16.13.1",
+    "react": "^17.0.2",
     "react-calendar": "^3.3.0",
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.8",
