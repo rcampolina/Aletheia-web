@@ -13,10 +13,8 @@ function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
   const [birth, setBirth] = useState('');
   const [cpf, setCpf] = useState('');
-  const [adress, setaAdress] = useState('');
   const [condition, setCondition] = useState('Normal');
   const [observations, setObservations] = useState('');
   const [attendance, setAttendance] = useState('');
@@ -24,9 +22,9 @@ function Register() {
 		const [number, setNumber] = useState('');
 		const [district, setDistrict] = useState('');
     const [complement, setComplement] = useState('');
-		const [city, setCity] = useState('');
-		const [state, setState] = useState('');
-		const [country, setCountry] = useState('');
+		const [city, setCity] = useState('Belo Horizonte');
+		const [state, setState] = useState('MG');
+		const [country, setCountry] = useState('Brasil');
 		const [code, setCode] = useState('');
 
   // async function getConditions(){
@@ -43,13 +41,10 @@ function Register() {
 
     if ( 
       name === undefined || name === '' ||
-      email === undefined || email === '' ||
-      phone === undefined || phone === '' ||
-      whatsapp === undefined || whatsapp === '' ||
-      cpf === undefined || cpf === '' ||
-      birth === undefined || birth === ''
-    ) {
-      alert('Campos obrigatórios devem ser preenchidos')
+      phone === undefined || phone === ''
+      )
+    {
+      alert('Campos obrigatórios devem ser preenchidos: Nome e telefone')
       return
     }
 
@@ -57,7 +52,6 @@ function Register() {
       name,
       email,
       phone,
-      whatsapp,
       cpf,
       birthDate: birth,
       condition,
@@ -77,19 +71,17 @@ function Register() {
       setName('');
       setEmail('');
       setPhone('');
-      setWhatsapp('');
       setBirth('');
       setCpf('');
-      setaAdress('');
       setCondition('Normal');
       setObservations('');
       setStreet('');
       setNumber('');
       setDistrict('');
       setComplement('');
-      setCity('');
-      setState('');
-      setCountry('');
+      setCity('Belo Horizonte');
+      setState('MG');
+      setCountry('Brasil');
       setCode('');
       alert('Cadastro realizado com sucesso!')
     }).catch((err)=> {
@@ -103,10 +95,9 @@ function Register() {
       <PageHeader title="Cadastro de Auxiliado"></PageHeader>
       
         <form className="form-register" onSubmit={handleSubmit}>
-          <Input name="name" placeholder="Nome" value={name} onChange={e => setName(e.target.value)} />
+          <Input name="name" placeholder="Nome*" value={name} onChange={e => setName(e.target.value)} />
           <Input name="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
-          <Input name="phone" placeholder="Telefone" value={phone} onChange={e => setPhone(e.target.value)} />
-          <Input name="whatsapp" placeholder="Celular" value={whatsapp} onChange={e => setWhatsapp(e.target.value)} />
+          <Input name="phone" placeholder="Telefone*" value={phone} onChange={e => setPhone(e.target.value)} />
           <Input name="birth" placeholder="Nascimento" type="date" value={birth} onChange={e => setBirth(e.target.value)} />
           <Input name="cpf" placeholder="CPF" value={cpf} onChange={e => setCpf(e.target.value)} />
           <Input name="street" placeholder="Rua" value={street} onChange={e => setStreet(e.target.value)} />
