@@ -40,7 +40,8 @@ function Register() {
       whatsapp === undefined || whatsapp === '' ||
       cpf === undefined || cpf === '' ||
       birth === undefined || birth === ''
-    ) {
+    )
+    {
       alert('Campos obrigatórios devem ser preenchidos')
       return
     }
